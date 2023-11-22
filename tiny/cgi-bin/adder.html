@@ -1,0 +1,18 @@
+<form id="myForm" action="/cgi-bin/adder" method="GET">
+  <input id="value1" type="number" required>
+  <input id="value2" type="number" required>
+  <button type="button" onclick="submitValues()">Submit</button>
+</form>
+
+<script>
+function submitValues() {
+  const value1 = document.getElementById("value1").value;
+  const value2 = document.getElementById("value2").value;
+
+  // 쿼리 문자열을 직접 구성하여 URL을 생성
+  const url = "/cgi-bin/adder?" + value1 + '&' + value2;
+
+  // 새 창 또는 현재 창으로 이동
+  window.location.href = url;
+}
+</script>
